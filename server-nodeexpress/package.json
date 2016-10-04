@@ -1,0 +1,19 @@
+{
+  "name": "server-nodeexpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "handlebars": "^4.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon --watch app.js --watch templates app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

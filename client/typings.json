@@ -1,0 +1,9 @@
+{
+  "globalDependencies": {
+    "firebase": "registry:dt/firebase#2.4.1+20160412125105",
+    "jquery": "registry:dt/jquery#1.10.0+20160704162008"
+  },
+  "globalDevDependencies": {
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504"
+  }
+}

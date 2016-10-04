@@ -35,3 +35,10 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Custom additions
+.c9
+client/dist
+client/css/*.css
+server-springboot/target
+

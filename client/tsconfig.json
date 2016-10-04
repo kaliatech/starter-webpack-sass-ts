@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "files": [
+        "typings/globals/jquery/index.d.ts",
+        "node_modules/firebase/firebase.d.ts"
+    ]    
+}
