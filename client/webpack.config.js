@@ -5,8 +5,8 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 module.exports = {
  entry: ['./src/app.ts'],
  output: {
-  path: './assets/',
-  publicPath: "/assets/",
+  path: '../client-dist/js/',
+  publicPath: "/static/js",
   filename: 'app.bundle.js'
  },
  resolve: {
@@ -62,8 +62,7 @@ module.exports = {
                 "../server-springboot/target/classes/templates/**/*.ftl",
                 "../server-nodeexpress/app.js",
                 "../server-nodeexpress/templates/*.*",
-                "css/main.css",
-                "client/css/main.css",
+                "../client-dist/css/**/*.*",
                 "app/js/*.js"]        
       },
       // plugin options 

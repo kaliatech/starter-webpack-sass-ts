@@ -1,30 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     
 {{#> header}}
-
     <head>
-        <style src="assets/css/main.css"></style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href="/static/css/main.css"/>
     </head>
-
 {{/header}}
 
 <body>
 
-{{#> content}}
+    <div class="container">
 
-    this is in tpl-master
+        {{#> content}}
+        
+            this is in tpl-master
+        
+        {{/content}}
 
-{{/content}}
+        {{#> footer }}
+        
+            <footer>
+                <span>Powered by Handlebars</span>
+            </footer>
+        
+        {{/footer}}
 
-{{#> footer}}
+    </div>
 
-<footer>
-    <span>Powered by Handlebars 3ef</span>
-</footer>
+    <script src="/static/js/app.bundle.js"></script>
 
-{{/footer}}
 
-  <script src="assets/app.bundle.js"></script>
+{{#> additionalJs }}
+{{/additionalJs }}
   
 </body>
 </html>

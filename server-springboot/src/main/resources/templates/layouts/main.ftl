@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/static/css/main.css">
     
 </head>
 
@@ -16,7 +16,7 @@
 
     ${content!}
     
-    <script src="assets/app.bundle.js"></script>
+    <script src="/static/js/app.bundle.js"></script>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <!--

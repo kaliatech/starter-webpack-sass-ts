@@ -40,5 +40,6 @@ console.log(testModel);
 
 //$("h1").html("test2");
 
-
-
+$("#test-btn").on('click', function(evt) {
+    alert("here5");
+});

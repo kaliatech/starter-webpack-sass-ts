@@ -5,9 +5,10 @@
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass:build": "node-sass ./css -o css",
+    "sass:build": "node-sass ./css -o ../client-dist/css",
     "sass:watch": "npm run sass:build && npm run sass:build -- -r -w",
-    "webpack:server": "webpack-dev-server --host $IP --port 8081 --hot --inline"
+    "webpack:server": "webpack-dev-server --host $IP --port 8081 --hot --inline",
+    "dev:all": "npm-run-all --parallel sass:watch webpack:server"
   },
   "author": "",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "browser-sync": "^2.14.3",
     "browser-sync-webpack-plugin": "^1.1.2",
     "node-sass": "^3.8.0",
+    "npm-run-all": "^3.1.0",
     "ts-loader": "^0.8.2",
     "typescript": "^2.0.0",
     "typings": "^1.3.3",

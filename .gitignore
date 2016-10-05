@@ -38,7 +38,7 @@ jspm_packages
 
 # Custom additions
 .c9
-client/dist
-client/css/*.css
+client-dist/css
+client-dist/js
 server-springboot/target
 
