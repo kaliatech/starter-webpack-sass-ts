@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/33377a68598194d155764feb4a4ef33f606b220a/wolfy87-eventemitter/wolfy87-eventemitter.d.ts",
+    "raw": "registry:dt/wolfy87-eventemitter#4.2.9+20160913103710",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/33377a68598194d155764feb4a4ef33f606b220a/wolfy87-eventemitter/wolfy87-eventemitter.d.ts"
+  }
+}

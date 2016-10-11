@@ -1,4 +1,5 @@
 var express = require('express');
+var glob = require('glob');
 var handlebars = require('handlebars');
 var fs = require('fs');
 var path = require('path');
@@ -30,19 +31,31 @@ app.get('/home', function (req, res) {
   });
 });
 
-
 function reloadPartials() {
   var partialsDir = __dirname + '/templates';
-  var filenames = fs.readdirSync(partialsDir);
-  filenames.forEach(function (filename) {
-    var matches = /^([^.]+).hbs$/.exec(filename);
-    if (!matches) {
-      return;
-    }
-    var name = matches[1];
-    var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
-    handlebars.registerPartial(name, template);
-  });
+  
+  glob(partialsDir + "/**/_*.hbs", function (er, files) {
+    files.forEach(function (filename) {
+      var template = fs.readFileSync(filename, 'utf8');
+      
+      var partialName = filename.replace(partialsDir + "/", "");
+      partialName = partialName.replace(".hbs", "");
+      
+      console.log("partial:" + partialName);
+      handlebars.registerPartial(partialName, template);      
+    });
+  });  
+
+  // var filenames = fs.readdirSync(partialsDir);
+  // filenames.forEach(function (filename) {
+  //   var matches = /^([^.]+).hbs$/.exec(filename);
+  //   if (!matches) {
+  //     return;
+  //   }
+  //   var name = matches[1];
+  //   var template = fs.readFileSync(partialsDir + '/' + filename, 'utf8');
+  //   handlebars.registerPartial(name, template);
+  // });
 }
 
 

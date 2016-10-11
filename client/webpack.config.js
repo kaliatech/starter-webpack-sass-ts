@@ -1,25 +1,53 @@
+
 const webpack = require("webpack");
 
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
+var node_dir = __dirname + '/node_modules';
+//var node_dir = './node_modules';
 
 module.exports = {
  entry: ['./src/app.ts'],
  output: {
   path: '../client-dist/js/',
   publicPath: "/static/js",
-  filename: 'app.bundle.js'
+  filename: 'app.bundle.js',
+  library: 'app'
  },
+ externals: {
+     // require("jquery") is external and available
+     //  on the global var jQuery
+     "jquery": "jQuery",
+     "firebaseui": "firebaseui"
+//     "bootstrap": "bootstrap"
+ }, 
  resolve: {
   // Add `.ts` and `.tsx` as a resolvable extension.
-  extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+  extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
+  alias: {
+    'wolfy87-eventemitter': node_dir + '/wolfy87-eventemitter/EventEmitter.js',
+  }
  },
  module: {
   loaders: [
-   // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-   {
-    test: /\.tsx?$/,
-    loader: 'ts-loader'
-   }
+    // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+    {
+      //test: /(\.tsx?)|(\.js)$/,
+      test: /\.tsx?$/,
+      loader: 'ts-loader'
+    },
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015'] 
+      }
+    }
+   // {
+   //   test: require.resolve("HomePage"),
+   //   loader: "expose?HomePage" 
+   // }
    // {
    //   test: /\.scss$/,
    //   loaders: ["style", "css", "sass"]
@@ -39,10 +67,10 @@ module.exports = {
   }, 
  },
  plugins: [
-      new webpack.ProvidePlugin({
-          $: "jquery",
-          jQuery: "jquery"
-      }),
+      // new webpack.ProvidePlugin({
+      //     $: "jquery",
+      //     jQuery: "jquery"
+      // }),
     new BrowserSyncPlugin(
       // BrowserSync options 
       {
@@ -61,8 +89,8 @@ module.exports = {
         files: [//"../server-springboot/src/main/resources/templates/index.ftl",
                 "../server-springboot/target/classes/templates/**/*.ftl",
                 "../server-nodeexpress/app.js",
-                "../server-nodeexpress/templates/*.*",
-                "../client-dist/css/**/*.*",
+                "../server-nodeexpress/templates/**/*",
+                "../client-dist/css/**/*",
                 "app/js/*.js"]        
       },
       // plugin options 

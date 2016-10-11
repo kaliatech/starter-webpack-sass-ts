@@ -2,13 +2,16 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "sourceMap": true
+        "sourceMap": true,
+        "allowJs": false
     },
     "exclude": [
         "node_modules"
     ],
     "files": [
         "typings/globals/jquery/index.d.ts",
+        "typings/globals/bootstrap/index.d.ts",
+        "typings/globals/wolfy87-eventemitter/index.d.ts",
         "node_modules/firebase/firebase.d.ts"
     ]    
 }

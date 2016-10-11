@@ -2,11 +2,24 @@
 
     <h1>{{title}}</h1>
     
-    <p class="test">Home page 3</p>
+    <p class="test">Home page 4</p>
 
     <button id="test-btn">Test</button>
-    
+
+
 
 {{/inline}}
 
-{{> tpl-master}}
+{{#*inline "additionalJs"}}
+<script>
+
+    // var page = new app.HomePageTest();
+    // page.init();
+    
+    var page = app.route("/");
+
+</script>
+{{/inline}}
+
+
+{{> layout/_master}}

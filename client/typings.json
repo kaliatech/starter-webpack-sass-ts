@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "bootstrap": "registry:dt/bootstrap#3.3.5+20160619023404",
     "firebase": "registry:dt/firebase#2.4.1+20160412125105",
     "jquery": "registry:dt/jquery#1.10.0+20160704162008"
   },

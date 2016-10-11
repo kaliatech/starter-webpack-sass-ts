@@ -1,45 +1,33 @@
-import testModel = require('./shared/TestModel.ts');
-
 import $ = require("jquery");
 
-import Firebase = require('firebase');
-//import "firebase";
-//import "firebase";
+import * as pages from './pages/index.ts';
 
-//import fbimport = require("firebase");
+import {AppContext} from './shared/AppContext.ts';
+import {AuthService} from './shared/services/AuthService.ts';
 
-//declare var Firebase: any;
-//import * from "firebase";
-//import "firebase"
-console.log("Firebase", Firebase.SDK_VERSION);
-//var fb = new Firebase("test");
-//console.log("fb", fb);
-///.initializeApp();
-console.log("fb", "Etfs");
+// Can use this to export classe outside of webpack modules
+//export {HomePage as HomePageTest} from "./pages/HomePage.ts";
 
-let rootRef = Firebase.initializeApp('https://chimaney-001.firebaseio.com');
+export let appCtx = new AppContext();
 
-//let fb = new Firebase("Test");
+export function route(routeName) {
+    //console.log('route:' + routeName);
+    let page:pages.Page;
 
-// let fb = new Firebase("Test");
+    if (routeName == "/") {
+        page = new pages.HomePage(appCtx);
+    }
+    page.init();    
+}
 
-// var config = {
-// apiKey: "<API_KEY>",
-// authDomain: "<PROJECT_ID>.firebaseapp.com",
-// databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-// storageBucket: "<BUCKET>.appspot.com"
-// };
-// fb.initializeApp(config);
-
-
-// console.log("rootRef", fb);
 
 
 //import bootstrap = require('bootstrap');
-console.log(testModel);
-
+//console.log(testModel);
 //$("h1").html("test2");
 
 $("#test-btn").on('click', function(evt) {
-    alert("here5");
+    console.log("click");
+    // let page = new HomePage();
+    // page.init();
 });
