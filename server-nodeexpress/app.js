@@ -14,11 +14,11 @@ app.set('view engine', 'hbs');
 //app.set('view engine', 'html');
 //app.engine('html', require('hbs').__express);
 
-app.get('/', function (req, res) {
-  res.send('<html><head></head><body><h1>Test 4</h1><p>Hello World 9xx!</p></body></html>');
-});
+// app.get('/', function (req, res) {
+//   res.send('<html><head></head><body><h1>Test 4</h1><p>Hello World 9xx!</p></body></html>');
+// });
 
-app.get('/home', function (req, res) {
+app.get('/', function (req, res) {
   
   reloadPartials();
   
