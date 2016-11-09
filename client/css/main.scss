@@ -1,5 +1,6 @@
 @import "bootstrap-custom";
 
+
 .test {
   color: #bb0000;
 }
@@ -7,3 +8,7 @@
 .hidden {
   display:none;
 }
+
+
+
+@import "includes/_navbar.scss";

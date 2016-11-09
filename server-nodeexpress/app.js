@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
   reloadPartials();
   
   var data = {
-      "title": "Test 001" 
+      "title": "Implementation of very complex feature" 
     };
   fs.readFile('templates/home.hbs', function(err, template){
     var html = renderToString(template.toString(), data)

@@ -1,0 +1,24 @@
+.navbar {
+  .username {
+    @extend .small;
+    color: white;
+  }
+  
+  .navbar-brand img {
+    padding-right:0.5rem;
+  }
+}
+
+//http://stackoverflow.com/questions/38772549/bootstrap-4-collapsed-navbar-loses-navbar-brand
+.navbar {
+  @include media-breakpoint-down(xs) {
+    .navbar-brand {
+      float: none;
+      height: 1.5rem;
+    }
+  }
+}
+
+.navbar-toggler {
+  height: 1.5em;
+}
