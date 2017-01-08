@@ -6,9 +6,14 @@ var path = require('path');
 
 var app = express();
 
+var isWin = /^win/.test(process.platform);
+
+//var clientDistPath = '/home/ubuntu/workspace/client-dist';
+var clientDistPath = 'C:/Projects/prototypes/2016/starter-webpack-sass-ts/client-dist';
+
 //app.use('/test', express.static(path.join(__dirname,'/../client/dist/css')));
 app.use('/test', express.static('/home/ubuntu/workspace/client/css'));
-app.use('/static', express.static('/home/ubuntu/workspace/client-dist'));
+app.use('/static', express.static(clientDistPath));
 
 app.set('view engine', 'hbs');
 //app.set('view engine', 'html');
@@ -33,6 +38,12 @@ app.get('/', function (req, res) {
 
 function reloadPartials() {
   var partialsDir = __dirname + '/templates';
+  if (isWin === true) {
+    partialsDir = partialsDir.replace(/\\/g, "/")
+  }	
+	
+  
+  console.log('partialsDir:' + partialsDir);
   
   glob(partialsDir + "/**/_*.hbs", function (er, files) {
     files.forEach(function (filename) {
@@ -74,5 +85,5 @@ app.get('/home2', function (req, res) {
 
 let port = 8080;
 app.listen(port, function () {
-  console.log(`Example app listening on port ${port}!`);
+  console.log(`Server listening on port ${port}!`);
 });
